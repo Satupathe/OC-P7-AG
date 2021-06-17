@@ -1,0 +1,39 @@
+DEBUT
+importer csv
+importer os
+
+liste_actions <- liste de listes des actions ([[nom, prix, profit],])
+
+Pour chaque "action" dans liste_actions:
+    prix <- action[1]
+    profit <- action[2]
+    action[2] <- arrondis(prix*(profit/100))
+
+prix_maximum = 500
+
+FONCTION(knapsack)(prix_maximum, liste_actions):
+    investissement <- prix_maximum
+    nombre_action <- longueur(liste_actions)
+    matrice <- liste de listes([[],0,0]) des actions pour chaque "i" entre 0 et (investissement+1) 
+
+    Pour chaque "n" entre 1 et (nombre_action+1):
+        action_actuelle = liste_action[n-1]:
+        nom <- action_actuelle[0]
+        prix <- action_actuelle[1]
+        profit <- action_actuelle[2]
+
+        Pour chaque "p" entre investissement et prix avec un pas de -1:
+            meilleur_profit_moins_coût_action <- matrice[p-prix] 
+            meilleur_profit_prix_actuel <- matrice[p]
+            profit_actuel <- meilleur_profit_moins_coût_action[2] + profit
+
+            SI profit_actuel > meilleur_profit_prix_actuel[2]:
+                matrice[p][0] <- meilleur_profit_moins_coût_action[0] + nom
+                matrice[p][1] <- meilleur_profit_moins_coût_action + prix
+                matrice[p][2] <- profit_actuel
+    
+    retourner le dernier élément de matrice
+
+
+
+    

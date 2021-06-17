@@ -1,0 +1,25 @@
+DEBUT
+action_table <- dictionnaire jeu des 20 actions
+meilleur_gain <- 0
+meilleure_combinaison_action <- empty list
+
+Pour chaque élément "i" de 1 à longueur de (action_table +1):
+    Pour chaque "résultat" de combinaison à "i" élément des actions de action_table:
+    somme_profits <- 0
+    prix_maximum <- 500
+    prix_achat <- 0
+
+    Pour chaque "action" dans "résultat":
+        prix <- action_table[action][0]
+        multiplicateur_profits <- action_table[action][1] / 100
+        prix d'achat <- prix d'achat + prix
+        somme_profits <- prix * multiplicateur_profits
+
+        SI prix_achat <= prix_maximum:
+            SI somme_profits > meilleur_gain:
+                meilleur_gain <- somme_profits
+                meilleure_combinaison_action <- "résultat"
+        
+ECRIRE La meilleure combinaison d'achat est: meilleure_combinaison_action
+ECRIRE L'estimation de gain est de: meilleur_gain
+FIN

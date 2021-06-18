@@ -6,6 +6,7 @@ action_list = []
 
 
 def get_csv():
+    """get and clean actions infos for the csv file"""
     filename = 'dataset2_Python+P7.csv'
     with open(filename,
               mode='r',
@@ -53,6 +54,10 @@ for corrected_action in action_list:
 
 
 def knapsack(capacity, actions):
+    """
+    Find for each action if it's worth or not to keep it 
+    and add it's value to the total
+    """
     investment = capacity * 100
     number_of_actions = len(actions)
     print(number_of_actions)

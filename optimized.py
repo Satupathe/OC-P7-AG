@@ -28,6 +28,10 @@ for action in action_list:
 
 
 def knapsack(capacity, actions):
+    """
+    Find for each action if it's worth or not to keep it 
+    and add it's value to the total
+    """
     investment = capacity
     number_of_actions = len(actions)
     keeping_table = [[[], 0, 0] for x in range(investment+1)]

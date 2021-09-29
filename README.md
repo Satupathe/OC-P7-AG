@@ -2,7 +2,7 @@
 This readme focus on how to set up your computer, launch the OCMovies API and open JustStreamIt homepage with the following steps:
 -download elements on your computer
 -set your computer on the right configuration
--launch brut and optimized solutions
+-acces to the website page
 
 Be careful: - In your powershell windows, using your right click will automatically paste
 	    - In your terminal application for mac or linux use the right click and paste
